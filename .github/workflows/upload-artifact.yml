@@ -32,4 +32,4 @@ jobs:
           TWINE_USERNAME: "__token__"
           TWINE_PASSWORD: "${{ secrets.GITHUB_TOKEN }}"
         run: |
-          python -m twine upload --non-interactive --repository-url https://upload.pypi.org/legacy/ dist/*
+          python -m twine upload --non-interactive --repository-url https://upload.github.com/ruchir-panchamukhi/demo-githubactions/dist/*
