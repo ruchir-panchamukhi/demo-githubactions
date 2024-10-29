@@ -6,4 +6,5 @@ def sub(a, b):
     return a - b
 
 print("hi")
+print("nothing")
 print("bye")
