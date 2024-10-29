@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest > result.log || true  # Redirect output to a log file and continue on failure
+          pytest
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
