@@ -29,7 +29,6 @@ jobs:
       - name: Run tests
         run: |
           pytest > output.log || true  # Redirect output to output.log
-          echo output.log
       
       - name: Upload test results
         uses: actions/upload-artifact@v4
