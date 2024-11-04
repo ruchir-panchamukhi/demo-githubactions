@@ -1,37 +1,40 @@
 pipeline {
     agent any
- 
-    environment {
-        // Define Python version if using a specific one
-        PYTHON_VERSION = 'python3'
-    }
- 
+
     stages {
         stage('Clone Repository') {
             steps {
-                // Clone the repository
-                git url: 'https://github.com/bhaskar-prasad/Demo', branch: 'main'
+                // Clone your repository (if using Git)
+                git 'https://github.com/yourusername/your-repo.git'
             }
         }
- 
- 
-        stage('Deploy') {
+
+        stage('Install Dependencies') {
             steps {
-                // Dummy deploy step (replace with actual deployment commands)
-                echo 'Deploying the application...'
+                // Install pytest directly
+                sh 'pip install pytest'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                // Run your tests
+                sh 'pytest test_main.py'
+            }
+        }
+
+        stage('Static Code Analysis') {
+            steps {
+                // Run a static analysis tool like flake8 or pylint
+                sh 'flake8 main.py test_main.py' // Adjust as necessary
             }
         }
     }
- 
+
     post {
         always {
-            echo 'Cleaning up...'
-        }
-        success {
-            echo 'Build succeeded!'
-        }
-        failure {
-            echo 'Build failed. Please check the errors.'
+            // Clean up or notify (optional)
+            echo 'Build finished'
         }
     }
 }
