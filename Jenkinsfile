@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone your repository (if using Git)
-                git 'https://github.com/ruchir-panchamukhi/demo-githubactions', branch:'main'
+                git url: 'https://github.com/ruchir-panchamukhi/demo-githubactions', branch:'main'
             }
         }
 
