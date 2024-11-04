@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone your repository (if using Git)
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/ruchir-panchamukhi/demo-githubactions.git'
             }
         }
 
@@ -25,15 +25,13 @@ pipeline {
 
         stage('Static Code Analysis') {
             steps {
-                // Run a static analysis tool like flake8 or pylint
-                sh 'flake8 main.py test_main.py' // Adjust as necessary
+                sh 'flake8 main.py test_main.py' 
             }
         }
     }
 
     post {
         always {
-            // Clean up or notify (optional)
             echo 'Build finished'
         }
     }
