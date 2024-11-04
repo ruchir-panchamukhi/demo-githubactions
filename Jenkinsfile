@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/ruchir-panchamukhi/demo-githubactions', branch:'main'
+                git url: 'https://github.com/ruchir-panchamukhi/demo-githubactions', branch: 'main'
             }
         }
 
         stage('Install Dependencies') {
             steps {
                 sh '''
-            pip install pytest
+                    pip install pytest
                 '''
             }
         }
@@ -21,11 +21,11 @@ pipeline {
                 sh 'pytest test_main.py'
             }
         }
-        
+    }
+
     post {
         always {
             echo 'Build finished'
         }
     }
-}
 }
