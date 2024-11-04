@@ -7,4 +7,5 @@ def sub(a, b):
 
 print("hi")
 print("nothing")
+print('1')
 print("bye")
