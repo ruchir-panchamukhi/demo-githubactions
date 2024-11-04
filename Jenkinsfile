@@ -11,8 +11,10 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                // Install pytest directly
-                sh 'pip install pytest'
+                sh '''
+            pip install pytest
+            pip install flake8
+                '''
             }
         }
 
