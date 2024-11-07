@@ -11,7 +11,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    pip install pytest
+                    python3 -m pip install pytest
                 '''
             }
         }
